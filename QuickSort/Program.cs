@@ -18,18 +18,18 @@ int GetPivot(int[] array, int start, int end)
         if (array[i] < array[end])
         {
             pivot++;
-            Swap(array, pivot, i);
+            Swap(ref array[pivot], ref array[i]);
         }
     pivot++;
-    Swap(array, pivot, end);
+    Swap(ref array[pivot], ref array[end]);
     return pivot;
 }
 
-void Swap(int[] array, int leftValue, int rightValue)
+void Swap(ref int leftValue, ref int rightValue)
 {
-    int temp = array[leftValue];
-    array[leftValue] = array[rightValue];
-    array[rightValue] = temp;
+    int temp = leftValue;
+    leftValue = rightValue;
+    rightValue = temp;
 }
 
 // Test zone
